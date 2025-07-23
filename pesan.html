@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Pesan Buat Kamu</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background-color: #fff0f5;
+      overflow-y: auto;
+      position: relative;
+    }
+
+    nav {
+      background-color: #f9d5e5;
+      padding: 15px 30px;
+      display: flex;
+      justify-content: center;
+      position: sticky;
+      top: 0;
+      z-index: 10;
+    }
+
+    nav a {
+      position: relative;
+      margin: 0 20px;
+      text-decoration: none;
+      color: #333;
+      font-weight: bold;
+      padding-bottom: 5px;
+    }
+
+    nav a::after {
+      content: '';
+      position: absolute;
+      width: 0;
+      height: 2px;
+      background-color: #ff6b6b;
+      bottom: 0;
+      left: 0;
+      transition: width 0.3s ease;
+    }
+
+    nav a:hover {
+      color: #ff6b6b;
+    }
+
+    nav a:hover::after {
+      width: 100%;
+    }
+
+    .container {
+      max-width: 600px;
+      margin: 100px auto 60px;
+      background-color: rgba(255, 255, 255, 0.9);
+      padding: 30px;
+      border-radius: 15px;
+      box-shadow: 0 0 20px rgba(255, 150, 200, 0.2);
+      line-height: 1.8;
+      font-size: 16px;
+      color: #333;
+      text-align: justify;
+      position: relative;
+      z-index: 2;
+    }
+
+    h1 {
+      text-align: center;
+      color: #d63384;
+      font-size: 28px;
+      margin-bottom: 25px;
+    }
+
+    .flower {
+      position: fixed;
+      top: -50px;
+      width: 30px;
+      height: 30px;
+      background-image: url('https://emojicdn.elk.sh/🌸');
+      background-size: cover;
+      animation: fall linear;
+      z-index: 0;
+      opacity: 0.5;
+    }
+
+    @keyframes fall {
+      to {
+        transform: translateY(100vh);
+        opacity: 0;
+      }
+    }
+  </style>
+</head>
+<body>
+  <nav>
+    <a href="index.html">Beranda</a>
+    <a href="pesan.html">Pesan</a>
+  </nav>
+
+  <div class="container">
+    <h1>Pesan Buat Kamu 💓</h1>
+    <p>
+      Aku gak tau kamu masih suka baca pesan kayak gini atau enggak.
+      Tapi kalau kamu nemu ini, anggap aja aku lagi nitipin sedikit rasa khawatir.
+    </p>
+
+    <p>
+      Aku tau kamu orangnya tangguh, nyelesein semua sendiri, sibuk ngejar mimpi. Tapi jangan lupa, kamu juga manusia.
+      Kamu butuh tidur yang cukup, bukan cuma kopi.
+      Butuh istirahat, bukan sekedar jeda.
+      Dan yang paling penting, kamu pantas buat hidup yang lebih ringan, lebih damai.
+    </p>
+
+    <p>
+      Aku gak bisa jagain kamu kayak dulu.
+      Tapi diam-diam... aku masih pengen kamu baik-baik aja.
+    </p>
+
+    <p>
+      Jangan terlalu keras sama diri sendiri ya.
+      Kalau lagi sakit jangan lupa minum obat, makan yang cukup jangan suka nahan laper.
+      kalo nanti aku udah gabisa ngingetin kamu semoga kamu selalu ingat dengan pesan ini.
+    </p>
+
+    <p>
+      aku juga pengen minta maaf buat yang udah lalu, yah mungkin aku bakal gengsi buat bilang ini tapi aku masih nganggep kamu kayak dulu neng.
+      bahagia selalu yaa biar aku bisa liat kamu bahagia dari jauh.
+    </p>
+
+  </div>
+
+  <script>
+    function createFlower() {
+      const flower = document.createElement("div");
+      flower.classList.add("flower");
+      flower.style.left = Math.random() * window.innerWidth + "px";
+      flower.style.animationDuration = (5 + Math.random() * 5) + "s";
+      document.body.appendChild(flower);
+
+      setTimeout(() => flower.remove(), 10000);
+    }
+
+    setInterval(createFlower, 400);
+  </script>
+</body>
+</html>
